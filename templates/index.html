@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% include 'navbar.html' %}
+{% block title %} Bem-vindo {% endblock %}
+
+
+{% block body %} 
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Nome Completo</td>
+            <td>Celular</td>
+            <td>CPF</td>
+            <td>Email</td>
+            <td>Função</td>
+            <td>
+                <a href="#" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i>
+                    Criar um novo Registro
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Joaquim</td>
+            <td>(65)994938917</td>
+            <td>56432112332</td>
+            <td>joaquim@hotmail.com</td>
+            <td>Coordenador de Tecnologia</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
