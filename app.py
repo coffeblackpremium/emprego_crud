@@ -26,9 +26,9 @@ def create_table():
 
 @app.route('/registrar', methods=['GET','POST'])
 def registrar():
-    year_school = ['1°Ano', '2°Ano', '3°Ano']
+    year_schools = ['1°Ano', '2°Ano', '3°Ano']
     if request.method == 'GET':
-        return render_template("register/create.html", year_school=year_school)
+        return render_template("register/create.html", year_schools=year_schools)
     
     if request.method == 'POST':
         name = request.form['name']

@@ -19,13 +19,13 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Ra</th>
                 <th scope="col">Cursando/Ano</th>
-                <th scope="col">Data</th>
+                <th scope="col">Data de Nascimento</th>
                 <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
+            {% for school in schools %}
             <tr>
-                {% for school in schools %}
                 <th scope="row">{{school.name}}</th>
                 <td>{{school.ra}}</td>
                 <td>{{school.year_school}}</td>
@@ -46,8 +46,8 @@
                         <i class="fas fa-plus"></i>Novo Registro
                     </a>
                 </td>
-                {% endfor %}
             </tr>
+            \
         </tbody>
     </table>
     </div>

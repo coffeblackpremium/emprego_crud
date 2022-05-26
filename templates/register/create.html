@@ -16,20 +16,20 @@
     <!-- Name input -->
     <div class="form-outline mb-4 mt-4 h-25 ">
         <label class="form-label" style="font-size: 18px; font-weight: 500;" for="name">Name</label>
-        <input type="text" id="name" class="form-control h-25" >
+        <input name="name" type="text" id="name" class="form-control h-25" >
     </div>
   
     <!-- Age input -->
     <div class="form-outline mb-4 mt-4 h-25">
         <label class="form-label" style="font-size: 18px; font-weight: 500;" for="age">Idade</label>
-        <input type="date" id="age" class="form-control" />
+        <input type="date" name="age" id="age" class="form-control" />
     </div>
 
     <!-- Ano Escolar input -->
     <div class="form-outline mb-3 mt-4 h-0">
         <select name="year_school" id="year_school" class="">
-            {% for year in year_school %}
-                <option for="year_school" value="{{year}}"> {{ year }} </option>
+            {% for year_school in year_schools %}
+                <option for="year_school" value="{{year_school}}"> {{ year_school }} </option>
             {% endfor %}
             </select>
       </div>
