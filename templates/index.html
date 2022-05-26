@@ -4,30 +4,53 @@
 
 
 {% block body %} 
-<table class="table table-borderless">
-    <thead class="border-bottom font-weight-bold">
-        <tr>
-            <td>Nome Completo</td>
-            <td>Celular</td>
-            <td>CPF</td>
-            <td>Email</td>
-            <td>Função</td>
-            <td>
-                <a href="#" class="btn btn-outline-success">
-                    <i class="fas fa-plus"></i>
-                    Criar um novo Registro
-                </a>
-            </td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Joaquim</td>
-            <td>(65)994938917</td>
-            <td>56432112332</td>
-            <td>joaquim@hotmail.com</td>
-            <td>Coordenador de Tecnologia</td>
-        </tr>
-    </tbody>
-</table>
+<div class="" style="display:flex;flex-direction:column; align-items: center;">
+    <div class="input-group w-25 mt-5">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+        <button type="button" class="btn btn-outline-primary">search</button>
+    </div>
+
+
+<div style="margin: 0 10% 0 10%">
+    <div class="mt-xl-5 ">
+    <table class="table table-sm table-dark" style="padding: 0 25% 0 25%">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Ra</th>
+                <th scope="col">Cursando/Ano</th>
+                <th scope="col">Data</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for school in schools %}
+                <th scope="row">{{school.name}}</th>
+                <td>{{school.ra}}</td>
+                <td>{{school.year_school}}</td>
+                <td>{{school.age}}</td>
+                <td>
+                    <a href="" class="btn text-secondary px-0">
+                        Editar
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
+                    <form action="" method="post" class="d-inline">
+                        
+                        <button type="submit" class="btn text-secondary px-0">
+                                delete
+                            <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                        </button>
+                    </form>
+                    <a href="{{url_for('registrar')}}" class="btn btn-outline-success">
+                        <i class="fas fa-plus"></i>Novo Registro
+                    </a>
+                </td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
+</div>
 {% endblock %}

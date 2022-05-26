@@ -1,10 +1,13 @@
 from os import environ, path
 from dotenv import load_dotenv
-from flask_mysqldb import MySQL
-
 
 basedir = path.abspath(path.dirname(__file__))
 load_dotenv(path.join(basedir, '.env'))
+
+server = environ.get('SERVER') 
+user = environ.get('USERDB')
+password = environ.get('PASSWORD')
+db_name = environ.get('DB_NAME')
 
 class Config:
 
@@ -16,8 +19,5 @@ class Config:
     TEMPLATES_FOLDER = 'templates'
 
     #Banco de Dados
-    MYSQL_HOST = environ.get('SERVER') 
-    MYSQL_USER = environ.get('USERDB')
-    MYSQL_PASSWORD = environ.get('PASSWORD')
-    MYSQL_DB = environ.get('DB_NAME')
+    SQLALCHEMY_DATABASE_URI = fr'mysql+pymysql://{user}:{password}@{server}/{db_name}'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
