@@ -39,11 +39,34 @@ def registrar():
         db.session.add(school)
         db.session.commit()
         return redirect('/')
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     schools = SchoolModel.query.all()
     return render_template("index.html", schools = schools)
 
+@app.route('/<int:id>')
+def show(id):
+    schools = SchoolModel.query.filter_by(id=id).first()
+    if schools:
+        return render_template('students/show_student.html', schools=schools)
+    return f'O Aluno de ID = {id} não existe'
+
+@app.route('/update')
+def update(id):
+    schools = SchoolModel.query.filter_by(id=id).firts()
+    if request.method == 'POST':
+        if schools:
+            db.session.delete(schools)
+            db.session.commit()
+            name = request.form['name']
+            age = request.form['age']
+            year_school = request.form['year_school']
+            ra = generate_ra()
+            schools = SchoolModel(id=id, name=name, age=age, year_school=year_school, ra=ra)
+            db.session.add(schools)
+            db.session.commit()
+            return redirect(f'/')
+        return f'O Aluno de ID= {id} não existe'
 
 if __name__ == "__main__":
     app.run()

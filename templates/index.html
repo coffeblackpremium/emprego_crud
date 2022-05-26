@@ -4,8 +4,10 @@
 
 
 {% block body %} 
-<div class="" style="display:flex;flex-direction:column; align-items: center;">
-    <div class="input-group w-25 mt-5">
+
+<form action="" method="" class="mt-5" style="display:flex;flex-direction:column; align-items: center;">
+    <h3>Pesquise um Aluno</h3>
+    <div class="input-group w-25 mt-2">
         <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
         <button type="button" class="btn btn-outline-primary">search</button>
     </div>
@@ -47,7 +49,7 @@
                     </a>
                 </td>
             </tr>
-            \
+            {% endfor %}
         </tbody>
     </table>
     </div>

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}🔍 Visualizar Aluno{% endblock %}
+{}
+{% include 'navbar.html' %}
+{% block body %}
+<h1 style="text-align: center;">Tabela do Aluno com o ID: {{schools.id}}</h1>
+<div style="margin: 0 10% 0 10%">
+    <div class="mt-xl-5 ">
+    <table class="table table-sm table-dark" style="padding: 0 25% 0 25%">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Ra</th>
+                <th scope="col">Cursando/Ano</th>
+                <th scope="col">Data de Nascimento</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{schools.name}}</th>
+                <td>{{schools.ra}}</td>
+                <td>{{schools.year_school}}</td>
+                <td>{{schools.age}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>            
+{% endblock %}
