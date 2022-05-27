@@ -1,3 +1,5 @@
-### School Crud
+# School CRUD
+
+* Um simples CRUD de Escola. Feito com Flask + SQLALCHEMY + MySQL
 <hr>
-This simple project with Flask + SQLALCHEMY. Building a simple Crud for a Fictitious School ☺️
+
