@@ -10,7 +10,7 @@ year_in_school_enum = Enum(*year_in_school, name="year_in_school")
 class SchoolModel(db.Model):
     __tablename__ = "table"
 
-    id = db.Column(db.Integer, primary_key=True)
+    id_student = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
     year_school = db.Column(db.String(5))
     ra = db.Column(db.Integer())

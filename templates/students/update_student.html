@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% include 'navbar.html' %}
+
+{% block body %}
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="d-flex justify-content-center">
+
+<form class="form-horizontal" action='' method="POST">
+    <h1 class="mt-5">Update de Aluno: ID {{schools.id_student}}</h1>
+    <!-- Name input -->
+    <div class="form-outline mb-4 mt-4 h-25 ">
+        <label class="form-label" style="font-size: 18px; font-weight: 500;" for="name">Name</label>
+        <input name="name" type="text" id="name" class="form-control h-25" value="{{schools.name}}">
+    </div>
+  
+    <!-- Age input -->
+    <div class="form-outline mb-4 mt-4 h-25">
+        <label class="form-label" style="font-size: 18px; font-weight: 500;" value="{{schools.age}}" for="age">Idade</label>
+        <input type="date" name="age" id="age" class="form-control" />
+    </div>
+
+    <!-- Ano Escolar input -->
+    <div class="form-outline mb-3 mt-4 h-0">
+        <select name="year_school" id="year_school" class="">
+            {% for year_school in year_schools %}
+                <option for="year_school" value="{{year_school}}"> {{ year_school }} </option>
+            {% endfor %}
+            </select>
+      </div>
+  
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block w-75">Subscribe</button>
+  </form>
+</div>
+{% endblock %}
