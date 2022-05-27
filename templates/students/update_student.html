@@ -11,6 +11,11 @@
 
 <form class="form-horizontal" action='' method="POST">
     <h1 class="mt-5">Update de Aluno: ID {{schools.id_student}}</h1>
+     <!-- ID input -->
+     <div class="form-outline mb-4 mt-4 h-25 ">
+        <label class="form-label" style="font-size: 18px; font-weight: 500;" for="id_student">ID</label>
+        <input name="id_student" type="text" id="id_student" class="form-control h-25" value="{{schools.id_student}}" >
+    </div>
     <!-- Name input -->
     <div class="form-outline mb-4 mt-4 h-25 ">
         <label class="form-label" style="font-size: 18px; font-weight: 500;" for="name">Name</label>

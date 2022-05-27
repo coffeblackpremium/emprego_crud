@@ -31,11 +31,12 @@ def registrar():
         return render_template("register/create.html", year_schools=year_schools)
     
     if request.method == 'POST':
+        id_student = request.form['id_student']
         name = request.form['name']
         age = request.form['age']
         year_school = request.form['year_school']
         ra = generate_ra()
-        school = SchoolModel(name=name, age=age, year_school=year_school, ra=ra)
+        school = SchoolModel(id_student=id_student,name=name, age=age, year_school=year_school, ra=ra)
         db.session.add(school)
         db.session.commit()
         return redirect('/')
@@ -61,6 +62,7 @@ def update(id):
             db.session.delete(schools)
             db.session.commit()
 
+            id_student = request.form['id_student']
             name = request.form['name']
             age = request.form['age']
             year_school = request.form['year_school']
@@ -69,7 +71,7 @@ def update(id):
 
             db.session.add(schools)
             db.session.commit()
-            return redirect(f'/{id}')
+            return redirect(f'/')
         return f'O Aluno de ID= {id} não existe'
     return render_template('students/update_student.html', schools=schools, year_schools=year_schools)
 

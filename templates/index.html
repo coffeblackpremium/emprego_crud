@@ -20,17 +20,20 @@
     <table class="table table-sm table-dark" style="padding: 0 25% 0 25%">
         <thead>
             <tr>
+                <th scop="col">ID</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Ra</th>
                 <th scope="col">Cursando/Ano</th>
                 <th scope="col">Data de Nascimento</th>
+                <th scope="col"></th>
                 <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             {% for school in schools %}
             <tr>
-                <th scope="row">{{school.name}}</th>
+                <th scope="row">{{school.id_student}}</th>
+                <td><a href="/{{school.id_student}}" style="text-decoration: none; color:inherit;">{{school.name}}</a></td>
                 <td>{{school.ra}}</td>
                 <td>{{school.year_school}}</td>
                 <td>{{school.age}}</td>
@@ -39,6 +42,8 @@
                         Editar
                         <i class="far fa-edit fa-lg"></i>
                     </a>
+                </td>
+                <td>
                     <form action="{{url_for('delete', id=school.id_student)}}" method="POST">
                         <button type="submit" class="btn text-secondary px-0">
                                     Deletar

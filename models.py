@@ -16,7 +16,8 @@ class SchoolModel(db.Model):
     ra = db.Column(db.Integer())
     age = db.Column(db.Date())
 
-    def __init__(self, name, age, year_school, ra):
+    def __init__(self, id_student,name, age, year_school, ra):
+        self.id_student = id_student
         self.name = name
         self.year_school = year_school
         self.ra = ra
