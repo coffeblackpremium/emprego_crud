@@ -20,9 +20,11 @@ db.init_app(app)
 migrate = Migrate()
 migrate.init_app(app, db)
 
-
 app.config.from_object('config.Config')
 
+@app.before_first_request
+def create_table():
+    db.create_all()
 
 @app.route('/registrar', methods=['GET','POST'])
 def registrar():
